@@ -25,11 +25,14 @@ namespace AsynchronousProgramming
             tasks[3] = Task.Run(() => { return SumSegment(3 * segmentLength, _array.Length); });
 
             //Console.WriteLine($"The sum is {tasks[0].Result + tasks[1].Result + tasks[2].Result + tasks[3].Result}.");
-            Console.WriteLine($"The sum is {tasks.Sum(t => t.Result)}");
-            var endTime = DateTime.Now;
-            var timespan = endTime - startTime;
+            //Console.WriteLine($"The sum is {tasks.Sum(t => t.Result)}");
 
-            Console.WriteLine($"The time it takes: {timespan.TotalMilliseconds}");
+            Task.WhenAll(tasks).ContinueWith(t =>
+            {
+                Console.WriteLine($"The summary is {t.Result.Sum()}");
+            });
+
+            Console.ReadLine();
         }
 
         int SumSegment(int start, int end)
