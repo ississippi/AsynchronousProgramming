@@ -16,5 +16,9 @@ using AsynchronousProgramming;
 //ex.DemoExceptionHandling();
 //ex.DemoExceptionThrow();
 
-var sp = new SemaphoreDemo();
-sp.Demo();
+//var sp = new SemaphoreDemo();
+//sp.Demo();
+
+var tn = new TaskCancellationDemo();
+tn.Demo();
+tn.DemoCancelAfter();
