@@ -13,12 +13,19 @@ using AsynchronousProgramming;
 
 //var ex = new ExceptionHandling();
 //ex.Demo();
-//ex.DemoExceptionHandling();
+//await ex.DemoExceptionHandling();
 //ex.DemoExceptionThrow();
 
 //var sp = new SemaphoreDemo();
 //sp.Demo();
 
-var tn = new TaskCancellationDemo();
-tn.Demo();
-tn.DemoCancelAfter();
+//var tn = new TaskCancellationDemo();
+//tn.Demo();
+//tn.DemoCancelAfter();
+
+//var aa = new AsyncAwait();
+//aa.Demo();
+//await aa.DemoAwait();
+
+var tw = new TaskContinuationAwait();
+await tw.Demo();

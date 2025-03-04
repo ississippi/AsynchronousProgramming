@@ -30,7 +30,7 @@ namespace AsynchronousProgramming
             Console.ReadLine();
         }
 
-        public void DemoExceptionHandling()
+        public async Task DemoExceptionHandling()
         {
             var tasks = new[]
             {
@@ -39,18 +39,19 @@ namespace AsynchronousProgramming
                 Task.Run(() => throw new Exception("General exception"))
             };
 
-            Task.WhenAll(tasks).ContinueWith(t =>
-            {
-                if (t.IsFaulted && t.Exception != null)
-                {
-                    foreach (var ex in t.Exception.InnerExceptions)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                }
-                Console.WriteLine("Press enter key to exit.");
-                Console.ReadLine();
-            });
+            await Task.WhenAll(tasks);
+            //Task.WhenAll(tasks).ContinueWith(t =>
+            //{
+            //    if (t.IsFaulted && t.Exception != null)
+            //    {
+            //        foreach (var ex in t.Exception.InnerExceptions)
+            //        {
+            //            Console.WriteLine(ex.Message);
+            //        }
+            //    }
+            //    Console.WriteLine("Press enter key to exit.");
+            //    Console.ReadLine();
+            //});
         }
 
         public void DemoExceptionThrow()
