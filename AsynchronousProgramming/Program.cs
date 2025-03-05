@@ -27,5 +27,14 @@ using AsynchronousProgramming;
 //aa.Demo();
 //await aa.DemoAwait();
 
-var tw = new TaskContinuationAwait();
-await tw.Demo();
+//var tw = new TaskContinuationAwait();
+//await tw.Demo();
+
+var pl = new ParallelLoops();
+//pl.Demo();
+//pl.DemoParallelInvoke();
+//pl.GetType();
+//pl.DemoStop();
+//pl.DemoBreak();
+//pl.DemoCancel();
+pl.DemoThreadLocalStorage();
