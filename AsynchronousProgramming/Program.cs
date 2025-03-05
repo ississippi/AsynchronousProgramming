@@ -48,5 +48,8 @@ using System.Reflection.PortableExecutable;
 //var cq = new ConcurrentQueueDemo();
 //cq.Demo();
 
-var cs = new ConcurrentStackDemo();
-cs.Demo();
+//var cs = new ConcurrentStackDemo();
+//cs.Demo();
+
+var bc = new BlockingCollectionDemo();
+bc.Demo();
